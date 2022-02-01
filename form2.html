@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/myscript.js"></script>
+
+    
+</head>
+
+<body>
+
+    <div class="container-fluid dash_cus" style="padding: 10px 0px;">
+        <div class="container">
+            <div class="col-sm-12 col-md-12 header">
+                <h4 class="align">Student Enrollment Form</h4>
+            </div>
+            <div class="addBorder">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="user_info">
+                            <div class="col-sm-12 mrgnTop">
+                                <form role="form" onsubmit="signUp(event);">
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">Name</label>
+                                        <div class="col-md-9">
+                                            <input type="text" onkeyup="Erroruser();" name="user" class="form-control cus_input"
+                                                id="user">
+                                            <span id="error_user" class="text-danger font-weight-bold"> </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">Email</label>
+                                        <div class="col-md-9">
+                                            <input type="text" onkeyup="Erroremail();" class="form-control cus_input" id="email"
+                                                name="email" value="">
+                                            <span id="error_email" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">Website</label>
+                                        <div class="col-md-9">
+                                            <input type="text" onkeyup="Errorwebsite();" class="form-control cus_input" id="website"
+                                                name="website" value="">
+                                            <span id="error_website" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label">Image Link</label>
+                                        <div class="col-md-9">
+                                            <input type="text" onkeyup="Errorlink();" class="form-control cus_input"class="form-control" id="link" name="link" value="">
+                                            <span id="error_link" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-md-3 col-form-label">Gender</label>
+                                        <div class="col-md-9">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio" name="customRadio"
+                                                    class="custom-control-input" value="Male">
+                                                <label class="custom-control-label" for="customRadio">
+                                                    Male
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio" name="customRadio"
+                                                    class="custom-control-input" value="Female">
+                                                <label class="custom-control-label" for="customRadio">
+                                                    Female
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row addMargin">
+                                        <label class="col-md-3 col-form-label">Skills</label>
+                                        <div class="col-md-9 inlineClass">
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input " type="checkbox" id="chk_java" value="">
+                                                <label class="form-check-label" for="chk_java">Java</label>
+                                                <span id="error_check" class="text-danger font-weight-bold"> </span>
+                                            </div>
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="chk_html" value="">
+                                                <label class="form-check-label" for="chk_html">HTML</label>
+                                                <span id="error_check" class="text-danger font-weight-bold"> </span>
+                                            </div>
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="chk_css" value="">
+                                                <label class="form-check-label" for="chk_css">CSS</label>
+                                                <span id="error_check" class="text-danger font-weight-bold"> </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
+                                            <a href="javascript:void(0)" id="submit" class="btn btn-primary"
+                                                onclick="validation()">Enroll Student</a>
+                                            &nbsp;
+                                            <a href="form2.html" id="submit" class="btn btn-danger">Clear</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="user_info">
+                            <div class="col-sm-12">
+                                <h4 class="align" style="margin-top: -6px;">Enrolled Students List</h4>
+                            </div>
+                            <div id="output">
+                                <table style="width: 94%;margin: 9px;">
+                                    <thead>
+                                        <th>Description</th>
+                                        <th>Image</th>
+                                    </thead>
+                                    <tbody>
+                                        <!-- DISPLAY USERS DATA -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-sm-12 borderClass"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 footer">
+                <p class="paraAlign" style="font-size: 14px;">Copyright 2020-2021 by Fresher Training</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
